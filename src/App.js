@@ -29,18 +29,15 @@ const handleFetch = () => {
   })
 };
 
-const handlesSubmit = (formInputData) => {
-  console.log("form inputs test",formInputData.name);
-  // e.preventDefault()
+const handlesSubmit = (climbingCrag) => {
+  console.log("form inputs test",climbingCrag.name);
   const 
     fetchOptions = {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'},
       // data in body
-      body: JSON.stringify({formInputData})
-
-    // body: JSON.stringify({"name": formInputData.name})
+      body: JSON.stringify({climbingCrag})
   }
 
   fetch('http://localhost:8080/create', fetchOptions)
@@ -54,7 +51,7 @@ const handlesSubmit = (formInputData) => {
   )
 };
 
-const handleDelete = (user) => {
+const handleDelete = (location) => {
     // make a delete request
     const 
     fetchOptions = {
@@ -62,11 +59,11 @@ const handleDelete = (user) => {
     headers: {
       'Content-type': 'application/json'},
       // data in body
-    body: JSON.stringify({"name": user.name})
+    body: JSON.stringify({"name": location.name})
   }
     fetch('http://localhost:8080/delete', fetchOptions)
     .then(() => {
-              console.log("Sucessfull Delete " + user.name)
+              console.log("Sucessfull Delete " + location.name)
               handleFetch()
               })
 
@@ -82,9 +79,9 @@ const onSubmit = (formInputDataArray) => {
 
     <h1>Enter Climbing Crag Details</h1>
 
-    {data.map(user => (
-    <p>{user.name}
-     <button onClick={() => handleDelete(user)}>Delete</button></p>
+    {data.map(location => (
+    <p>{location.climbingCrag.name}
+     <button onClick={() => handleDelete(location)}>Delete</button></p>
     
     ))}
 
