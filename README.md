@@ -1,3 +1,12 @@
+CLimbing Stop Node Client - WORK IN PRGRESSS -
+
+this is nowhere near finished
+
+- gets climbing spot info from a custom API created using NODE/
+- front end reaxt app showing climbing spots
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
